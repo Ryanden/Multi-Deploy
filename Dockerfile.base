@@ -1,0 +1,9 @@
+FROM            python:3.6.5-slim
+
+RUN             apt-get -y update
+RUN             apt-get -y dist-upgrade
+RUN             apt-get -y install nginx supervisor
+
+COPY            ./requirements.txt  /srv/requirements.txt
+
+RUN             pip install -r /srv/requirements.txt
